@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <Map setFloor={setFloor}/>
-      <ExhibitionInfo/>
+      <ExhibitionInfo floor={floor}/>
       <EventInfo/>
     </>
   );
