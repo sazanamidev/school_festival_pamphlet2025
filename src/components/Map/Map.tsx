@@ -1,53 +1,53 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Mousewheel, Pagination } from "swiper/modules";
+import { Swiper as SwiperType } from "swiper";
 
-import { useSwipeable } from "react-swipeable";
 
-/**
- * 学園祭のフロアマップを表示するコンポーネント
- * 各階のSVG画像を切り替えて表示する
- */
+import "swiper/css";
+import "swiper/css/pagination";
 
-// Propsの型定義
 type Props = {
-	setFloor: React.Dispatch<React.SetStateAction<number>>; // 親コンポーネントへの階数の状態更新関数
+	setFloor: React.Dispatch<React.SetStateAction<number>>;
 };
 
 export const Map: React.FC<Props> = ({ setFloor }) => {
-	// ローカルで現在の階数を管理
-	const [floor, setLocalFloor] = useState(1);
+	const floors = Array.from({ length: 9 }, (_, i) =>8 - i); // 0〜8階 (B1〜8階)
 
-	// 階数が変更されたら親コンポーネントに通知
 	useEffect(() => {
-		setFloor(floor);
-	}, [floor, setFloor]);
-
-	const handlers = useSwipeable({
-		onSwipedUp:()=>setLocalFloor(f=>Math.max(3,f + 1)),
-		onSwipedDown:()=>setLocalFloor(f=>Math.min(1,f - 1))
-
-	})
+		setFloor(1); // 初期階
+	}, [setFloor]);
 
 	return (
-		<div {...handlers} className="w-full text-center select-none">
-			{/* 現在選択されている階のマップ画像を表示 */}
-			{/* テスト用SVGのURLを指定している */}
-			<Image src={`/test_Map/floor${floor}.svg`} alt={`Floor ${floor}`} width={500} height={500} />
-			
-			<div>
-				{/* 階数選択ボタン */}
-				<button onClick={() => setLocalFloor(0)}>B1階</button>
-				<button onClick={() => setLocalFloor(1)}>1階</button>
-				<button onClick={() => setLocalFloor(2)}>2階</button>
-				<button onClick={() => setLocalFloor(3)}>3階</button>
-				<button onClick={() => setLocalFloor(4)}>4階</button>
-				<button onClick={() => setLocalFloor(5)}>5階</button>
-				<button onClick={() => setLocalFloor(6)}>6階</button>
-				<button onClick={() => setLocalFloor(7)}>7階</button>
-				<button onClick={() => setLocalFloor(8)}>8階</button>
-			</div>
-			
+		<div className="w-full h-full text-center">
+			<Swiper
+				direction="vertical" // 上下にスワイプ
+				modules={[Mousewheel, Pagination]}
+				mousewheel={true}
+				pagination={{ clickable: true }}
+				initialSlide={7}
+				onSlideChange={(swiper: SwiperType) => {
+					const floor = floors[swiper.activeIndex];
+					setFloor(floor);
+				}}
+				className="h-[500px]" // 高さを調整
+			>
+				{floors.map((floor) => (
+					<SwiperSlide key={floor}>
+						<div className="flex flex-col items-center justify-center h-full">
+							<Image
+								src={`/test_Map/floor${floor}.svg`}//本番時には適切なURLにしてください
+								alt={`Floor ${floor}`}
+								width={500}
+								height={500}
+							/>
+							<p className="mt-2">{floor === 0 ? "B1階" : `${floor}階`}</p>
+						</div>
+					</SwiperSlide>
+				))}
+			</Swiper>
 		</div>
 	);
 };
