@@ -40,8 +40,7 @@ export const ExhibitionInfo: React.FC<Props> = ({ floor }) => {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
+    alignItems: 'flex-start',
     width: '100%',
     maxWidth: 760,
     minHeight: 180,         // 余白を増やす
@@ -77,6 +76,7 @@ export const ExhibitionInfo: React.FC<Props> = ({ floor }) => {
     margin: 0,
     whiteSpace: 'pre-line', // JSON の \n を改行として表示
     color: '#333',
+    
     lineHeight: 1.8,        // 行間を広げて読みやすく
     fontSize: 15,
   };
