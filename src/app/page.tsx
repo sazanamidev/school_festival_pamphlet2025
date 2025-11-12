@@ -8,9 +8,9 @@ export default function Home() {
   const [floor,setFloor] = useState<number>(1);
   return (
     <>
+      <EventInfo/>
       <Map setFloor={setFloor}/>
       <ExhibitionInfo floor={floor}/>
-      <EventInfo/>
     </>
   );
 }

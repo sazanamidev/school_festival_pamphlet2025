@@ -54,7 +54,7 @@ export const Map: React.FC<Props> = ({ setFloor }) => {
 					<SwiperSlide key={floor}>
 						<div className="flex flex-col items-center justify-center h-full">
 							<Image
-								src={`/test_Map/floor${floor}.svg`}
+								src={`Map/${floor}.svg`}
 								alt={`Floor ${floor}`}
 								width={500}
 								height={500}
@@ -65,7 +65,7 @@ export const Map: React.FC<Props> = ({ setFloor }) => {
 				))}
 			</Swiper>
 			
-			/* 階層ジャンプボタン */
+			
 			<div className="mt-4 flex flex-wrap justify-center gap-2">
 				{floors.slice().reverse().map((floor) => ( // B1から8階の順番で表示
 					<button
