@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel } from "swiper/modules";
 import { Swiper as SwiperType } from "swiper";
+import { Button } from "@heroui/react"
 import "swiper/css";
 
 type Props = {
@@ -48,7 +49,7 @@ export const Map: React.FC<Props> = ({ setFloor }) => {
 					setFloor(floor);
 					setActiveFloor(floor);
 				}}
-				className="h-[60vh] sm:h-[500px]" // 高さを調整
+				className="h-[30vh] sm:h-[500px]" // 高さを調整
 			>
 				{floors.map((floor) => (
 					<SwiperSlide key={floor}>
@@ -68,17 +69,19 @@ export const Map: React.FC<Props> = ({ setFloor }) => {
 			
 			<div className="mt-4 flex flex-wrap justify-center gap-2">
 				{floors.slice().reverse().map((floor) => ( // B1から8階の順番で表示
-					<button
+					<Button
+						size="sm"
+						isIconOnly
 						key={floor}
-						onClick={() => jumpToFloor(floor)}
-						className={`px-3 py-2 rounded-md border transition-colors ${
+						onPress={() => jumpToFloor(floor)}
+						className={`px-0.5 rounded-md border transition-colors ${
 							activeFloor === floor
 								? 'bg-blue-500 text-white border-blue-500'
 								: 'bg-white text-gray-700 border-gray-300 hover:bg-gray-50'
 						}`}
 					>
-						{floor === 0 ? 'B1' : `${floor}階`}
-					</button>
+						{floor === 0 ? 'B1' : `${floor}`}
+					</Button>
 				))}
 			</div>
 		</div>
