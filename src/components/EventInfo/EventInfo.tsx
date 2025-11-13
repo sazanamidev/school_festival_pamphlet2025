@@ -6,7 +6,7 @@
     // export default EventInfo;
     import { useEffect, useState } from 'react';
 
-    const EVENT_DATE_STRING='2025-11-15';
+    const EVENT_DATE_STRING=process.env.NEXT_PUBLIC_BASE_DATE || '2025-11-15';
     export const EventInfo=()=>{
 
         const [nowTime, setNowTime] = useState<number>(Date.now());
