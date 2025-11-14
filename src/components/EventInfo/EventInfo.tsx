@@ -7,6 +7,8 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
+  Card,
+  CardBody,
 } from "@heroui/react";
 
 const EVENT_DATE_STRING = process.env.NEXT_PUBLIC_BASE_DATE || "2025-11-15";
@@ -71,10 +73,9 @@ export const EventInfo = () => {
                   ? '開催中'
                   : '終了';
             return (
-              <li
-                key={item.eventName}
-                className="flex items-center gap-4 py-3 border-b last:border-b-0"
-              >
+                <Card key={item.eventName} className="m-2">
+                    <CardBody>
+              
                 <div className="flex flex-col">
                   <span className="font-medium text-gray-800">
                     {item.eventName}
@@ -97,11 +98,14 @@ export const EventInfo = () => {
                     >
                       {status}
                     </span>
+                    <Button size="sm" onPress={onOpen} isIconOnly variant="light" radius="full" className="ml-auto">
+                    <span className="material-symbols-outlined">
+                        info
+                    </span>
+                </Button>
                   </div>
                 </div>
-                <Button size="sm" onPress={onOpen} className="ml-auto">
-                  詳細
-                </Button>
+                
                 <Modal
                   isOpen={isOpen}
                   onOpenChange={onOpenChange}
@@ -129,7 +133,9 @@ export const EventInfo = () => {
                     )}
                   </ModalContent>
                 </Modal>
-              </li>
+              
+              </CardBody>
+              </Card>
             );
           })}
         </ul>
