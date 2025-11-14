@@ -49,7 +49,7 @@ export const Map: React.FC<Props> = ({ setFloor }) => {
 					setFloor(floor);
 					setActiveFloor(floor);
 				}}
-				className="h-[30vh] sm:h-[500px]" // 高さを調整
+				className="h-[40vh] sm:h-[500px]" // 高さを調整
 			>
 				{floors.map((floor) => (
 					<SwiperSlide key={floor}>
