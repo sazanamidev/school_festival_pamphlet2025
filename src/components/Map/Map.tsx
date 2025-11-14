@@ -54,13 +54,13 @@ export const Map: React.FC<Props> = ({ setFloor }) => {
 				{floors.map((floor) => (
 					<SwiperSlide key={floor}>
 						<div className="flex flex-col items-center justify-center h-full">
+						<p className="mt-2 text-2xl font-bold">{floor === 0 ? "B1階" : `${floor}階`}</p>
 							<Image
 								src={`Map/${floor}.svg`}
 								alt={`Floor ${floor}`}
 								width={500}
 								height={500}
 							/>
-							<p className="mt-2">{floor === 0 ? "B1階" : `${floor}階`}</p>
 						</div>
 					</SwiperSlide>
 				))}
