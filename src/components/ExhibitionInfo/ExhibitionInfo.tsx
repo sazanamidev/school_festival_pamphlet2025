@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Card, CardBody, CardHeader } from '@heroui/react';
 
 type Props = {
   floor: number;
@@ -38,28 +39,60 @@ export const ExhibitionInfo: React.FC<Props> = ({ floor }) => {
   const floorText = floor === 0 ? '地下1階' : `${floor}階`;
 
   return (
-    <div className="mx-auto my-6 w-full max-w-[760px] min-h-[180px] rounded-xl border-2 border-black bg-white px-6 py-6 shadow-[0_6px_18px_rgba(0,0,0,0.08)] flex flex-col">
+    <div className="mx-auto my-6 w-full max-w-[760px] rounded-2xl border border-gray-200 bg-gradient-to-b from-white to-gray-50 px-6 py-6 shadow-lg ring-1 ring-black/5">
       <div className="mb-4 flex w-full items-center justify-between">
         <span className="inline-flex items-center rounded-full border border-blue-600 bg-blue-600/10 px-3 py-1 text-sm font-semibold text-blue-700">
           {floorText}
         </span>
         {info && (
-          <span className="text-xs text-gray-500">
-            更新: {new Date().toLocaleDateString()}
-          </span>
+          <span className="text-xs text-gray-500">更新: {new Date().toLocaleDateString()}</span>
         )}
       </div>
 
+      {/* スクロール領域（高さ制限 + スクロール） */}
       <div className="w-full">
-                {!loading && info ? (
-          info.map((item, idx) => (
-            <p key={idx} className="m-0 whitespace-pre-line leading-relaxed text-[15px] text-gray-700 mb-3">
-              {item.description ?? item.descrip ?? '説明がありません'}
-            </p>
-          ))
-        ) : (
-          <p className="m-0 text-gray-500">該当する展示情報が見つかりません。</p>
-        )}
+        <div
+          key={floor}
+          className="h-[30vh] sm:h-[480px] overflow-y-auto overscroll-contain pr-1"
+        >
+          {loading ? (
+            <div className="space-y-3">
+              <Card radius="sm" className="animate-pulse">
+                <CardBody className="space-y-2">
+                  <div className="h-4 w-3/4 rounded bg-gray-200" />
+                  <div className="h-4 w-2/5 rounded bg-gray-200" />
+                  <div className="h-4 w-1/2 rounded bg-gray-200" />
+                </CardBody>
+              </Card>
+            </div>
+          ) : info ? (
+            <div className="grid gap-3">
+              {info.map((item, idx) => (
+                <Card
+                  key={idx}
+                  radius="sm"
+                  shadow="sm"
+                  className="border border-gray-200 transition-shadow hover:shadow-md"
+                >
+                  <CardHeader className="pb-0">
+                    <h3 className="text-sm font-semibold text-gray-800 truncate">{floorText} 展示</h3>
+                  </CardHeader>
+                  <CardBody className="py-2">
+                    <p className="whitespace-pre-line text-sm leading-relaxed text-gray-700">
+                      {item.description ?? item.descrip ?? '説明がありません'}
+                    </p>
+                  </CardBody>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <Card radius="sm" shadow="none" className="border border-dashed border-gray-300">
+              <CardBody className="py-3">
+                <p className="m-0 text-sm text-gray-500">該当する展示情報が見つかりません。</p>
+              </CardBody>
+            </Card>
+          )}
+        </div>
       </div>
 
       {!loading && !info && (
