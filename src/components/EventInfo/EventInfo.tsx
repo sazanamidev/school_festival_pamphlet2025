@@ -1,10 +1,5 @@
-    // function EventInfo(){
-    //     return(
-    //         <h1>Hello World!</h1>
-    //     );
-    // }
-    // export default EventInfo;
     import { useEffect, useState } from 'react';
+
 
     const EVENT_DATE_STRING=process.env.NEXT_PUBLIC_BASE_DATE || '2025-11-15';
     export const EventInfo=()=>{
@@ -68,37 +63,3 @@
             </div>
         );
     }
-
-        // <ul>
-            //      <li>オープニングセレモニー【10:15~10:30】</li>
-            //       <li>  CGスペシャリスト学科　TCコンペ表彰式【10:30~11:00】</li>
-            //       <li>コスプレコンテスト　アピールタイム【11:00~11:45】</li> 
-            // </ul>
-
-    // import {useState, useEffect } from "react";
-
-    // export interface Event{
-    //     eventName:string;
-    //     eventTime:string;
-    //     eventContent:string;
-    // }
-    // const JSON_URL='/data/ivent.json';//参照する
-
-
-    // // function update(){
-    // //     EventInfo.minute = new Date().toLocaleTimeString();
-    // //     setTimeout(update,60000);
-    // // }
-    // // export const EventInfo = () =>{
-    // //     const[eventData,setEventData]=useState<EventDate|null>(null);
-    // // let now =new Date();
-    // // let hour =now.getHours();
-    // // let minute=now.getMinutes();
-
-    // // if(hour===9&&minute===minute1){//9:30の時にやるやつ
-    // //   //jsonファイルから時刻・名前・内容を表示
-    // //   console.log(`[$hour]:$[minute]イベント情報をお知らせします`)
-
-    // // }
-
-    // }
