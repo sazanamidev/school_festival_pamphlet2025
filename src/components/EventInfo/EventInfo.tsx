@@ -140,10 +140,11 @@ export const EventInfo = () => {
           })}
         </ul>
       ) : (
-        <p>
-          現在、表示すべきイベントはありません。 (本日の基準日:{" "}
-          {EVENT_DATE_STRING})
-        </p>
+        <Card className="m-2">
+            <CardBody className="m-2">
+                <p>直近で開催のイベントはありません</p>
+            </CardBody>
+        </Card>
       )}
     </div>
   );
