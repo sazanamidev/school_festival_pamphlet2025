@@ -74,7 +74,7 @@ export const EventInfo = () => {
                   {(onClose) => (
                     <>
                       <ModalHeader className="flex flex-col gap-1">
-                        Modal Title
+                        イベント詳細
                       </ModalHeader>
                       <ModalBody>
                         <div>{item.eventContent}</div>
