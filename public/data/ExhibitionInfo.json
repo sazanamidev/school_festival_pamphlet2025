@@ -21,37 +21,12 @@
     },
     {
         "floor":"1",
-        "place":"正面玄関",
+        "place":"正面玄関 12:00~13:00",
         "description":"チャリティー餅つき大会"
     },
     {
         "floor": "2",
         "description": "イベントはありません"
-    },
-    {
-        "floor": "3",
-        "place":"F31",
-        "description": "HAPPY☆MUSIC ライブイベント"
-    },
-    {
-        "floor":"3",
-        "place":"F36",
-        "description":"CGスペシャリスト学科 TCコンペ表彰式"
-    },
-    {
-        "floor":"3",
-        "place":"F36",
-        "description":"コスプレコンテスト"
-    },
-    {
-        "floor":"3",
-        "place":"F36",
-        "description":"学園祭フリーステージ　今年は「ダンス」「ヲタ芸」がエントリー"
-    },
-    {
-        "floor":"3",
-        "place":"F36",
-        "description":"ビンゴ大会　今年も豪華賞品が目白押し！"
     },
     {
         "floor":"3",
@@ -67,6 +42,36 @@
         "floor":"3",
         "place":"ラウンジ",
         "description":"ぺんさんど SHOP vol.1　オリジナルキャラクター「ぺんさんど」のグッズ販売"
+    },
+    {
+        "floor": "3",
+        "place":"F31 13:00~14:30",
+        "description": "HAPPY☆MUSIC ライブイベント"
+    },
+    {
+        "floor":"3",
+        "place":"F36 10:30~11:00",
+        "description":"CGスペシャリスト学科 TCコンペ表彰式"
+    },
+    {
+        "floor":"3",
+        "place":"F36 11:00~11:45",
+        "description":"コスプレコンテスト アピールタイム"
+    },
+    {
+        "floor":"3",
+        "place":"F36 12:15~13:00",
+        "description":"学園祭フリーステージ　今年は「ダンス」「ヲタ芸」がエントリー"
+    },
+    {
+        "floor":"3",
+        "place":"F36 14:15~14:45",
+        "description":"コスプレコンテスト 表彰式"
+    },
+    {
+        "floor":"3",
+        "place":"F36 15:00~16:00",
+        "description":"ビンゴ大会　今年も豪華賞品が目白押し！"
     },
     {
         "floor": "4",
