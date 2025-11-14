@@ -9,6 +9,7 @@ type Exhibition = {
   floor: string | number;
   descrip?: string;
   description?: string;
+  place: string;
 };
 
 export const ExhibitionInfo: React.FC<Props> = ({ floor }) => {
@@ -74,7 +75,7 @@ export const ExhibitionInfo: React.FC<Props> = ({ floor }) => {
                   className="border border-gray-200 transition-shadow hover:shadow-md"
                 >
                   <CardHeader className="pb-0">
-                    <h3 className="text-sm font-semibold text-gray-800 truncate">{floorText} 展示</h3>
+                    <h3 className="text-sm font-semibold text-gray-800 truncate">{item.place}</h3>
                   </CardHeader>
                   <CardBody className="py-2">
                     <p className="whitespace-pre-line text-sm leading-relaxed text-gray-700">
