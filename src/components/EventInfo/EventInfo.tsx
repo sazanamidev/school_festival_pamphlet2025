@@ -29,7 +29,7 @@ export const EventInfo = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setNowTime(Date.now());
-    }, 60000);
+    }, 30000);
 
     return () => clearInterval(timer);
   }, []);
