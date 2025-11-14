@@ -15,6 +15,8 @@ export const EventInfo = () => {
 
   const [eventdata, setEventData] = useState<any[]>([]);
 
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+
   useEffect(() => {
     fetch("/data/Event.json")
       .then((res) => res.json())
@@ -61,7 +63,35 @@ export const EventInfo = () => {
         <ul>
           {filteredEvents.map((item) => (
             <li key={item.eventName}>
-              {item.eventName}【{item.startTime}】<div>{item.eventContent}</div>
+              {item.eventName}【{item.startTime}】
+              <Button onPress={onOpen}>詳細</Button>
+              <Modal
+                isOpen={isOpen}
+                onOpenChange={onOpenChange}
+                placement="center"
+              >
+                <ModalContent>
+                  {(onClose) => (
+                    <>
+                      <ModalHeader className="flex flex-col gap-1">
+                        Modal Title
+                      </ModalHeader>
+                      <ModalBody>
+                        <div>{item.eventContent}</div>
+                      </ModalBody>
+                      <ModalFooter>
+                        <Button
+                          color="danger"
+                          variant="light"
+                          onPress={onClose}
+                        >
+                          Close
+                        </Button>
+                      </ModalFooter>
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
             </li>
           ))}
         </ul>
