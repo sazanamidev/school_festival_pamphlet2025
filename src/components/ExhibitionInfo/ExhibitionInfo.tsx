@@ -49,7 +49,6 @@ export const ExhibitionInfo: React.FC<Props> = ({ floor }) => {
         )}
       </div>
 
-      {/* スクロール領域（高さ制限 + スクロール） */}
       <div className="w-full">
         <div
           key={floor}
