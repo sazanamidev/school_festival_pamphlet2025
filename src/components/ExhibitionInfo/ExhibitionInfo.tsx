@@ -11,7 +11,7 @@ type Exhibition = {
 };
 
 export const ExhibitionInfo: React.FC<Props> = ({ floor }) => {
-  const [info, setInfo] = useState<Exhibition | null>(null);
+  const [info, setInfo] = useState<Exhibition[] | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -21,8 +21,8 @@ export const ExhibitionInfo: React.FC<Props> = ({ floor }) => {
       .then(res => res.json())
       .then((data: Exhibition[]) => {
         if (!mounted) return;
-        const found = data.find(e => String(e.floor) === String(floor));
-        setInfo(found ?? null);
+        const found = data.filter(e => String(e.floor) === String(floor));
+        setInfo(found.length > 0 ? found :null);
       })
       .catch(() => {
         if (mounted) setInfo(null);
@@ -51,18 +51,14 @@ export const ExhibitionInfo: React.FC<Props> = ({ floor }) => {
       </div>
 
       <div className="w-full">
-        {loading ? (
-          <div className="space-y-3 animate-pulse">
-            <div className="h-4 w-4/5 rounded bg-gray-200" />
-            <div className="h-4 w-3/5 rounded bg-gray-200" />
-            <div className="h-4 w-2/3 rounded bg-gray-200" />
-          </div>
-        ) : info ? (
-          <p className="m-0 whitespace-pre-line leading-relaxed text-[15px] text-gray-700">
-            {info.description ?? info.descrip ?? '説明がありません'}
-          </p>
+                {!loading && info ? (
+          info.map((item, idx) => (
+            <p key={idx} className="m-0 whitespace-pre-line leading-relaxed text-[15px] text-gray-700 mb-3">
+              {item.description ?? item.descrip ?? '説明がありません'}
+            </p>
+          ))
         ) : (
-            <p className="m-0 text-gray-500">該当する展示情報が見つかりません。</p>
+          <p className="m-0 text-gray-500">該当する展示情報が見つかりません。</p>
         )}
       </div>
 
