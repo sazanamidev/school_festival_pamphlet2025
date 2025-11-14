@@ -1,19 +1,28 @@
 [
     {
         "floor": "0",
-        "description": "F06:チーム出the印　オリジナルグッズの販売、似顔絵屋、作品の展示をします"
+        "place":"F06",
+        "description": "チーム出the印　オリジナルグッズの販売、似顔絵屋、作品の展示をします"
     },
     {
         "floor":"0",
+        "place":"F06前",
         "description":"クラブ出the印　音楽と映像を流し、教室をクラブのような空間に！缶ドリンク販売中！"
     },
     {
         "floor": "1",
-        "description": "EVF＆廊下:模擬店（飲食）　たこ焼き、からあげ、ピザ、チャーハン、たません、ポップコーンがあります"
+        "place":"エレベーターホール&廊下",
+        "description": "たこ焼き、からあげ、ピザ、チャーハン、たません、ポップコーンがあります"
+    },
+    {
+        "floor": "1",
+        "place":"F11",
+        "description": "休憩スペース 3階イベント会場の様子を同時中継！"
     },
     {
         "floor":"1",
-        "description":"正面玄関:チャリティー餅つき大会"
+        "place":"正面玄関",
+        "description":"チャリティー餅つき大会"
     },
     {
         "floor": "2",
@@ -21,106 +30,132 @@
     },
     {
         "floor": "3",
-        "description": "・F31:HAPPY☆MUSIC ライブイベント"
+        "place":"F31",
+        "description": "HAPPY☆MUSIC ライブイベント"
     },
     {
         "floor":"3",
-        "description":"・F36:CGスペシャリスト学科 TCコンペ表彰式"
+        "place":"F36",
+        "description":"CGスペシャリスト学科 TCコンペ表彰式"
     },
     {
         "floor":"3",
-        "description":"・コスプレコンテスト"
+        "place":"F36",
+        "description":"コスプレコンテスト"
     },
     {
         "floor":"3",
-        "description":"・学園祭フリーステージ　今年は「ダンス」「ヲタ芸」がエントリー"
+        "place":"F36",
+        "description":"学園祭フリーステージ　今年は「ダンス」「ヲタ芸」がエントリー"
     },
     {
         "floor":"3",
-        "description":"・ビンゴ大会　今年も豪華賞品が目白押し！"
+        "place":"F36",
+        "description":"ビンゴ大会　今年も豪華賞品が目白押し！"
     },
     {
         "floor":"3",
-        "description":"・ラウンジ:蒲公英＆CRAFTCUBE　クラフトワークの販売・体験"
+        "place":"ラウンジ",
+        "description":"蒲公英＆CRAFTCUBE　クラフトワークの販売・体験"
     },
     {
         "floor":"3",
-        "description":"・ゲーム売店　ゲームをCDにして販売"
+        "place":"ラウンジ",
+        "description":"ゲーム売店　ゲームをCDにして販売"
     },
     {
         "floor":"3",
-        "description":"・ぺんさんど SHOP vol.1　オリジナルキャラクター「ぺんさんど」のグッズ販売"
+        "place":"ラウンジ",
+        "description":"ぺんさんど SHOP vol.1　オリジナルキャラクター「ぺんさんど」のグッズ販売"
     },
     {
         "floor": "4",
-        "description": "F42:実行委員主催ゲーム大会　いろんなゲームで対戦して景品をゲットしよう！"
+        "place":"F42",
+        "description": "実行委員主催ゲーム大会　いろんなゲームで対戦して景品をゲットしよう！"
     },
     {
         "floor":"4",
-        "description":"F43:トライ電鉄！？ご当地クイズで物件ゲット　ダーツを投げて当たった場所のクイズに正解して景品をゲットだ！"
+        "place":"F43",
+        "description":"トライ電鉄！？ご当地クイズで物件ゲット　ダーツを投げて当たった場所のクイズに正解して景品をゲットだ！"
     },
     {
         "floor": "5",
-        "description": "F51～F53:GT卒業制作展示 ゲームサイエンス学科３年生の卒業制作展示"
+        "place":"F51~F53",
+        "description": "GT卒業制作展示 ゲームサイエンス学科３年生の卒業制作展示"
     },
     {
         "floor":"5",
-        "description":"・F53:ゲーム展示 of Freshman　自作ゲームの展示"
+        "place":"F53",
+        "description":"ゲーム展示 of Freshman　自作ゲームの展示"
     },
     {
         "floor":"5",
-        "description":"・F54：ゲーム開発研究部のたのしいゲーム体験！　ゲーム開発研究部で制作したゲームを展示"
+        "place":"F54",
+        "description":"ゲーム開発研究部のたのしいゲーム体験！　ゲーム開発研究部で制作したゲームを展示"
     },
     {
         "floor":"5",
-        "description":"・F55:さざなみ開発　Web アプリやゲームなどの展示・体験・物販"
+        "place":"F55",
+        "description":"さざなみ開発 Webアプリやゲームなどの展示・体験・物販"
     },
     {
         "floor":"5",
-        "description":"EVH：TRIDENT EXCHANGE PROGRAM 2025　海外交流に参加した学生の共同プロジェクト"
+        "place":"エレベーターホール",
+        "description":"TRIDENT EXCHANGE PROGRAM 2025　海外交流に参加した学生の共同プロジェクト"
     },
     {
         "floor": "6",
-        "description": "F61：ダーツランド"
+        "place":"F61",
+        "description": "ダーツランド"
     },
     {
         "floor":"6",
-        "description":"・F62:射的練習場"
+        "place":"F62",
+        "description":"射的練習場"
     },
     {
         "floor":"6",
-        "description":"・F63:おいでよ じゃっくぽっとの沼"
+        "place":"F63",
+        "description":"おいでよ じゃっくぽっとの沼"
     },
     {
         "floor":"6",
-        "description":"・F64:ボードゲームでエンジョイしようぜ！"
+        "place":"F64",
+        "description":"ボードゲームでエンジョイしようぜ！"
     },
     {
         "floor":"6",
-        "description":"・F66:天国・地獄・大地獄　千本くじ"
+        "place":"F66",
+        "description":"天国・地獄・大地獄　千本くじ"
     },
     {
         "floor":"6",
-        "description":"・EVF:謎解きの森　ポスターの謎を解いて、答えを導き出す謎解き企画！"
+        "place":"エレベーターホール",
+        "description":"謎解きの森　ポスターの謎を解いて、答えを導き出す謎解き企画！"
     },
     {
         "floor": "7",
-        "description": "F71:God Field交流会　参加者にはお菓子、勝者には景品をご用意！"
+        "place":"F73",
+        "description": "God Field交流会　参加者にはお菓子、勝者には景品をご用意！"
     },
     {
         "floor":"7",
+        "place":"F72",
         "description":"・F72:スマブラSP最強決定戦　学内外問わず、トーナメント方式で最強を決める！"
     },
     {
         "floor":"7",
+        "place":"F71",
         "description":"・F73:ストリートファイター６大会　11:30までエントリー受付、12時からトーナメント開始"
     },
     {
         "floor":"7",
+        "place":"F75",
         "description":"・F75:シミュレーション部　ログインパスワードの暗記テスト・結果表示"
     },
     {
         "floor": "8",
-        "description": "F86:CG作品展示・上映　CGスペシャリスト学科１・２年生の作品展示・上演 "
+        "place":"F86",
+        "description": "F86:CG作品展示・上映　CGスペシャリスト学科1・2年生の作品展示・上演"
     }
 ]
