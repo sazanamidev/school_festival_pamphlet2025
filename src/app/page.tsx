@@ -10,7 +10,9 @@ export default function Home() {
     <>
       <EventInfo/>
       <Map setFloor={setFloor}/>
+      <div className="mx-2">
       <ExhibitionInfo floor={floor}/>
+      </div>
     </>
   );
 }

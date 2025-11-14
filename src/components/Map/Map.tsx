@@ -49,18 +49,18 @@ export const Map: React.FC<Props> = ({ setFloor }) => {
 					setFloor(floor);
 					setActiveFloor(floor);
 				}}
-				className="h-[30vh] sm:h-[500px]" // 高さを調整
+				className="h-[40vh] sm:h-[500px]" // 高さを調整
 			>
 				{floors.map((floor) => (
 					<SwiperSlide key={floor}>
 						<div className="flex flex-col items-center justify-center h-full">
+						<p className="mt-2 text-2xl font-bold">{floor === 0 ? "B1階" : `${floor}階`}</p>
 							<Image
 								src={`Map/${floor}.svg`}
 								alt={`Floor ${floor}`}
 								width={500}
 								height={500}
 							/>
-							<p className="mt-2">{floor === 0 ? "B1階" : `${floor}階`}</p>
 						</div>
 					</SwiperSlide>
 				))}
