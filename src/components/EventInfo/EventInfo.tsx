@@ -30,16 +30,10 @@ export const EventInfo = () => {
   const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
 
   const fetchEvents = (reason: string) => {
-    const url = `/data/Event.json?ts=${Date.now()}`; // キャッシュバスター
-    console.log("[EventInfo] fetch start:", { reason, url });
+    const url = `/data/Event.json?ts=${Date.now()}`;
     fetch(url, { cache: "no-store" })
       .then(r => r.json())
       .then((data: EventItem[]) => {
-        console.log("[EventInfo] fetch done:", {
-          reason,
-          count: data.length,
-          times: data.map(d => `${d.eventName} ${d.startTime}-${d.endTime}`),
-        });
         setEventData(data);
       })
       .catch(e => console.error("[EventInfo] fetch error:", e));
@@ -61,15 +55,11 @@ export const EventInfo = () => {
   useEffect(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
     intervalRef.current = window.setInterval(() => {
-      const t = Date.now();
-      setNowTime(t);
-      console.log("[EventInfo] tick ->", new Date(t).toLocaleString("ja-JP"));
+      setNowTime(Date.now());
     }, 30000);
-    console.log("[EventInfo] interval started");
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
-        console.log("[EventInfo] interval cleared");
       }
     };
   }, []);
@@ -79,26 +69,13 @@ export const EventInfo = () => {
     const result = eventdata.filter(item => {
       if (!item.startTime || !item.endTime) return false;
       if (!/^\d{2}:\d{2}$/.test(item.startTime) || !/^\d{2}:\d{2}$/.test(item.endTime)) {
-        console.warn("[EventInfo] time format invalid:", item);
         return false;
       }
       const startMs = toMsJST(EVENT_DATE_STRING, item.startTime);
       const endMs   = toMsJST(EVENT_DATE_STRING, item.endTime);
       const showFrom = startMs - 30 * 60 * 1000;
-      const show = nowTime >= showFrom && nowTime < endMs;
-
-      // 追加ログ（JST評価での境界確認）
-      console.log("[EventInfo] filter check", {
-        name: item.eventName,
-        start: item.startTime, end: item.endTime,
-        startMs, endMs, showFrom,
-        now: nowTime, nowLocal: new Date(nowTime).toLocaleString("ja-JP"),
-        status: nowTime < startMs ? "まもなく" : nowTime < endMs ? "開催中" : "終了",
-        show,
-      });
-      return show;
+      return nowTime >= showFrom && nowTime < endMs;
     });
-    console.log("[EventInfo] filtered total:", result.length);
     return result;
   }, [eventdata, nowTime]);
 
